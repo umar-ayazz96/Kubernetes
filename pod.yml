@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend-pod
+  labels:
+    env: test
+    type: frontend
+spec:
+  nodeName: prod-cluster-worker3
+  containers:
+  - name: unifin-pod
+    image: umarayaz96/staticfrontendsite
+    ports:
+    - containerPort: 80

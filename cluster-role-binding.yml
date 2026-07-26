@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: full-access-binding
+subjects:
+  - kind: User
+    name: arn:aws:iam::605855663520:user/umar_admin
+    apiGroup: rbac.authorization.k8s.io
+roleRef:
+  kind: ClusterRole
+  name: full-access-role
+  apiGroup: rbac.authorization.k8s.io

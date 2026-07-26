@@ -1,0 +1,22 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: cluster-admin-role
+  namespace: default
+
+rules:
+#pods
+- apiGroups: [""]
+  resources:
+    - pods
+  verbs:
+    - "*"
+
+#deployment
+- apiGroups: ["apps"]
+  resources:
+    - deployments
+    - deployments/scale
+  verbs:
+    - "*" 
+
